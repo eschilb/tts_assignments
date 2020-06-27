@@ -15,9 +15,9 @@ public class BubbleSort {
     				a[i] = a[i + 1];
     				a[i + 1] = tmp;
     				swapped = true;
-                }
-            }                
-	    }
+    			}
+    		}            
+    	}
 	}
 
 
