@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>JS examples</title>
+  <style>
+#myDiv1, #myDiv2 {
+  background-color: coral;
+  padding: 50px;
+}
+#myP1, #myP2 {
+  background-color: white;
+  font-size: 20px;
+  border: 1px solid;
+  padding: 20px;
+}
+</style>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+</head>
+<body>
+<h3>Var and Operations examples</h3>
+  <p id="demo"></p>
+  <p id="demo2"></p>
+  <p id="demo3"></p>
+  <p id="demo4"></p>
+  <p id="demo5"></p>
+  <p id="demo6"></p>
+<h3>Boolean examples</h3>
+  <p id="demo7"></p>
+  <p id="demo8"></p>
+  <p id="demo9"></p>
+  <p id="demo10"></p>
+<h3>If Else examples</h3>
+  <p id="demo11">Good Evening!</p>
+  <p id="demo12"></p>
+<h3>Function examples</h3>
+<p>This example below calls a function which performs a calculation and returns the result:</p>
+<p id="demofunction"></p>
+<p>This example below shows how functions can be used the same way as you use variables </p>
+<p id="demo14"></p>
+<h3>Manipulating the DOM</h3>
+  <button onclick="myFunction()">Try it</button>
+<p id="demo15"></p>
+<p>Inline example below of button using the script tag</p>
+  <button type="button" onclick="alert(Math.floor(Math.random() * (7 - 1)) + 1)">Click Me</button>
+  <script type="text/javascript" src="javascript/main.js"></script>
+  <br>
+  <br>
+<!--   end of inline example -->
+<!-- FINDINIG AND USING NODES BELOW -->
+<input id="username"></input>
+<p class="introduction"></p>
+<p class="introduction"></p>
+<p class="introduction"></p>
+<ul>
+    <li>First list item</li>
+    <li>Second list item</li>
+<ul>
+<br>
+<br>
+<!-- straight from the slides-->
+<div>
+  <a href="http://google.com">Click me</a>
+</div>
+<!-- straight from slides - editing a node-->
+<br>
+<br>
+<!-- add node - NOT from slides -->
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+<!-- end of adding node -->
+<!-- remove node -not from slides -->
+<br>
+<div>
+<p id="p3">We are removing this paragraph. Click below</p>
+<p id="p1">This one stays put</p>
+</div>
+<button onclick="myRemove()">Click to remove</button>
+<!-- end of remove node -->
+<!-- <h2>JavaScript addEventListener()</h2>
+<p>This example uses the addEventListener() method to execute a function when a user clicks on a button.</p>
+<button id="myButton">Try it</button> -->
+<!-- uses the addEventListener() method to attach a click event to a button. -->
+<!-- DOM EVENT LISTENER -->
+<h2>JavaScript addEventListener()</h2>
+<div id="myDiv1">
+  <h2>Bubbling:</h2>
+  <p id="myP1">Click me!</p>
+</div><br>
+<div id="myDiv2">
+  <h2>Capturing:</h2>
+  <p id="myP2">Click me!</p>
+</div>
+<!-- JQUERY stuff  -->
+<h3>Jquery stuff - Finding HTML Elements by Id</h3>
+<p id="id01">Hello World!</p>
+<p id="id02">Hello Sweden!</p>
+<p id="id03">Hello Japan!</p>
+<p id="dem"></p>
+<script src="main.js"></script>
+</body>
+</html>
