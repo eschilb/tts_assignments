@@ -35,34 +35,7 @@ class Person
         }
         this.certs = certs;
     }
-    //overload 1
-    getPerson(firstName: string, lastName: string, age: number, phoneNumber: number): Person;
-    //overload 2
-    getPerson(firstName: string, lastName: string, age: number): Person;
-    //overload 3
-    getPerson(firstName: string, lastName: string, age: number, occupation: string): Person;
-    //overload 4
-    getPerson(firstName: string, lastName: string, occupation: string): Person;
-    //implementation
-    getPerson(firstName: string, lastName: string, paramThree: string | number, paramFour?: number | string){
-      let person: Person;
-      if (typeof paramFour == 'undefined') {
-        if (typeof paramThree == 'number') {
-          //overload 2
-          return this.person = person;
-        } else {
-          //overload 4
-          return person;
-        }
-      } else if (typeof paramThree == 'number'){
-        //overload 1
-        return person;
-      } else {
-        //overload 3
-        return person;
-      }
-      return person;
-    }
+
 
     fullName(): string{
       return this.firstName + " " + this.lastName;
@@ -89,6 +62,31 @@ class Person
           this.certs.push(addCerts[i]);
         }
         return this.certs;
+    }
+
+    createPerson(options: PersonOptions): {firstName: string; lastName: string; age: number; phoneNumber: number; state: string; zipCode: number; occupation: string; hourlyWage: number} {
+      let newPerson = {firstName: "", lastName: "", age: null, phoneNumber: null, state: "", zipCode: null, occupation: "", hourlyWage: null}
+      newPerson.firstName = options.firstName;
+      newPerson.lastName = options.lastName;
+      if (options.age) {
+        newPerson.age = options.age;
+      }
+      if (options.phoneNumber) {
+        newPerson.phoneNumber = options.phoneNumber;
+      }
+      if (options.state) {
+        newPerson.state = options.state;
+      }
+      if (options.zipCode) {
+        newPerson.zipCode = options.zipCode;
+      }
+      if (options.occupation) {
+        newPerson.occupation = options.occupation;
+      }
+      if (options.hourlyWage) {
+        newPerson.hourlyWage = options.hourlyWage;
+      }
+      return newPerson;
     }
 
 }
@@ -121,4 +119,4 @@ document.getElementById('deanWage').innerHTML =  dean.fullName() + " " + dean.we
 
 document.getElementById('annieAddCerts').innerHTML =  annie.fullName() + " " + annie.addCerts("Java", "Vanilla JS", "Angular");
 
-document.getElementById('rich').innerHTML = rich.getPerson("Richy", "Rich", 25);
+// document.getElementById('rich').innerHTML = rich.getPerson("Richy", "Rich", 25);

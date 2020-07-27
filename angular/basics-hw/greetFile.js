@@ -23,29 +23,6 @@ var Person = /** @class */ (function () {
         }
         this.certs = certs;
     }
-    //implementation
-    Person.prototype.getPerson = function (firstName, lastName, paramThree, paramFour) {
-        var person;
-        if (typeof paramFour == 'undefined') {
-            if (typeof paramThree == 'number') {
-                //overload 2
-                return this.person = person;
-            }
-            else {
-                //overload 4
-                return person;
-            }
-        }
-        else if (typeof paramThree == 'number') {
-            //overload 1
-            return person;
-        }
-        else {
-            //overload 3
-            return person;
-        }
-        return person;
-    };
     Person.prototype.fullName = function () {
         return this.firstName + " " + this.lastName;
     };
@@ -71,6 +48,30 @@ var Person = /** @class */ (function () {
         }
         return this.certs;
     };
+    Person.prototype.createPerson = function (options) {
+        var newPerson = { firstName: "", lastName: "", age: null, phoneNumber: null, state: "", zipCode: null, occupation: "", hourlyWage: null };
+        newPerson.firstName = options.firstName;
+        newPerson.lastName = options.lastName;
+        if (options.age) {
+            newPerson.age = options.age;
+        }
+        if (options.phoneNumber) {
+            newPerson.phoneNumber = options.phoneNumber;
+        }
+        if (options.state) {
+            newPerson.state = options.state;
+        }
+        if (options.zipCode) {
+            newPerson.zipCode = options.zipCode;
+        }
+        if (options.occupation) {
+            newPerson.occupation = options.occupation;
+        }
+        if (options.hourlyWage) {
+            newPerson.hourlyWage = options.hourlyWage;
+        }
+        return newPerson;
+    };
     return Person;
 }());
 var annie = new Person("Annie", "Green", 30, 1112223333, "Nebraska", 00000, "Dog Walker", 15, ["PhD", "MVP", "MFA", "CIA"], 35);
@@ -80,4 +81,4 @@ document.getElementById('details').innerHTML = annie.details();
 document.getElementById('deets').innerHTML = dean.details();
 document.getElementById('deanWage').innerHTML = dean.fullName() + " " + dean.weeklyWage();
 document.getElementById('annieAddCerts').innerHTML = annie.fullName() + " " + annie.addCerts("Java", "Vanilla JS", "Angular");
-document.getElementById('rich').innerHTML = rich.getPerson("Richy", "Rich", 25);
+// document.getElementById('rich').innerHTML = rich.getPerson("Richy", "Rich", 25);
